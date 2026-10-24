@@ -1,0 +1,64 @@
+Error Id: XDSM:D055A647
+
+Exception:
+    DesktopStudio_PowerShellHistory : GetCapabilitiesScript
+    24/10/2026 12:55:16
+    
+    
+    Error Source : Citrix Studio
+    
+    StackTrace: Citrix.Console.Common.CitrixAggregateException One or more parallel operations failed
+       at Citrix.Console.Common.CitrixParallel.InternalForEach[TIn](IEnumerable`1 items, Action`1 operation, Int32 maxSimultaneous)
+       at Citrix.Orchestration.Base.PowerShellSdk.CapabilitiesService.Scripts.GetCapabilitiesScript.RunScript()
+       at Citrix.Orchestration.Base.PowerShellInteraction.PowerShellScript`1.Run()
+       at Citrix.Orchestration.Base.PowerShellSdk.CapabilitiesService.Scripts.GetCapabilitiesAndFeaturesScript.RunScript()
+       at Citrix.Orchestration.Base.PowerShellInteraction.PowerShellScript`1.Run()
+       at Citrix.Orchestration.Base.PowerShellSdk.CapabilitiesService.PSCapabilitiesService.LoadCapabilities(Boolean servicesAreConfigured, Nullable`1 productEdition, Boolean forceRefresh)
+       at Citrix.Orchestration.Base.PowerShellSdk.UpgradeService.UpgradeTasks.DataMigration.DataMigrationTasks.GetUpgradeRequirement(IProgressReporter progressReporter, UpgradeStatusModel upgradeStatusModel)
+       at Citrix.Orchestration.Base.PowerShellSdk.UpgradeService.UpgradeTasks.UpgradeTaskBase.AssessUpgradeRequirement(IProgressReporter progressReporter, UpgradeStatusModel upgradeStatusModel)
+       at Citrix.Orchestration.Base.PowerShellSdk.UpgradeService.UpgradeTasks.UpgradeTaskBase.RunUpgrade(IProgressReporter progressReporter, ITaskLogger taskLogger)
+       at Citrix.Orchestration.Base.PowerShellSdk.UpgradeService.UpgradeTasks.Upgrade.RunUpgradeTask(IProgressReporter progressReporter, ITaskLogger taskLogger)
+       at Citrix.Orchestration.Base.PowerShellSdk.UpgradeService.UpgradeTasks.UpgradeTaskBase.RunUpgrade(IProgressReporter progressReporter, ITaskLogger taskLogger)
+       at Citrix.Console.DeliveryCenter.UI.Mmc.UpgradeResultPaneViewModel.UpgradeTask(IProgressReporter progressReporter, UserCredentials adminDatabaseCredentials, UserCredentials serviceDatabaseCredentials)
+       at Citrix.Console.Common.OperationTimer.TimeBlock(Action operation)
+       at Citrix.Console.CommonControls.ProgressDisplay.GenericProgressOperationWithFeedBack.PerformOperationInternal()
+       at Citrix.Console.CommonControls.ProgressDisplay.ProgressWindowOperation.PerformOperation()
+       at Citrix.Console.CommonControls.ProgressDisplay.ProgressWindowViewModel.PerformAction(Action operationComplete)
+    
+Inner Exception:
+    
+    StackTrace: Citrix.Console.Common.CitrixAggregateException One or more parallel operations failed
+       at Citrix.Console.Common.CitrixParallel.InternalForEach[TIn](IEnumerable`1 items, Action`1 operation, Int32 maxSimultaneous)
+       at Citrix.Orchestration.Base.PowerShellSdk.CapabilitiesService.Scripts.GetCapabilitiesScript.GetCapabilities(DeploymentCapabilitiesModel siteCapabilities, SdkType type, Reduce reduce, Fetch fetch, IEnumerable`1 controllersAtMinVersion)
+       at Citrix.Orchestration.Base.PowerShellSdk.CapabilitiesService.Scripts.GetCapabilitiesScript.<>c__DisplayClass9_0.<RunScript>b__2(CapabilityConfig kv)
+       at Citrix.Console.Common.CitrixParallel.<>c__DisplayClass5_0`1.<InternalForEach>b__0(Object state)
+    
+Inner Exception:
+    DesktopStudio_ErrorId : DatabaseNotConfigured
+    Error Source : CitrixMachineCreationService
+    ErrorCategory : InvalidResult
+    DesktopStudio_PowerShellHistory : SimplePowerShellScript
+    24/10/2026 12:55:16
+    
+    Reset-ProvEnabledFeatureList -AdminAddress "vwesppcdel22.esp.intra:80" -BearerToken ********
+    Reset-ProvEnabledFeatureList : The operation could not be completed as the database has not been configured for the Citrix Machine Creation Service service.
+    	+ CategoryInfo : InvalidOperation: (:) [Reset-ProvEnabledFeatureList], InvalidOperationException
+    	+ FullyQualifiedErrorId : Citrix.XDPowerShell.Status.DatabaseNotConfigured,Citrix.MachineCreation.Sdk.FeatureChecks.Commands.ResetProvEnabledFeatureListCommand
+    
+    
+    StackTrace: Citrix.Orchestration.Base.LogicModels.Exceptions.InvalidServiceConfigurationException All services have not been configured.
+       at Citrix.Orchestration.Base.PowerShellInteraction.CmdletExecutionMethods.CreateException[T](ExecutionResults`1 results, ICmdletExecutionHost host)
+       at Citrix.Orchestration.Base.PowerShellInteraction.CmdletExecutionMethods.ExecuteAndReturnRawResults(SdkPipeline sdkCmd, ICmdletExecutionHost host)
+       at Citrix.Orchestration.Base.PowerShellInteraction.CmdletExecutionMethods.Execute(SdkPipeline sdkCmd, ICmdletExecutionHost host)
+       at Citrix.Orchestration.Base.PowerShellSdk.CapabilitiesService.Scripts.GetCapabilitiesScript.<>c__DisplayClass12_1.<MapReduceCapabilitiesForAllControllers>b__2(ICmdletExecutionHost host)
+       at Citrix.Orchestration.Base.PowerShellInteraction.SimplePowerShellScript.<>c__DisplayClass3_0`1.<Run>b__0(ICmdletExecutionHost o)
+       at Citrix.Orchestration.Base.PowerShellInteraction.PowerShellScript`1.Run()
+       at Citrix.Orchestration.Base.PowerShellInteraction.SimplePowerShellScript.Run[T](IUnityContainer container, Func`2 action)
+       at Citrix.Orchestration.Base.PowerShellSdk.CapabilitiesService.Scripts.GetCapabilitiesScript.<>c__DisplayClass12_0.<MapReduceCapabilitiesForAllControllers>b__1(String controller)
+       at Citrix.Console.Common.CitrixParallel.<>c__DisplayClass5_0`1.<InternalForEach>b__0(Object state)
+    
+Inner Exception:
+    
+    StackTrace: System.InvalidOperationException The operation could not be completed as the database has not been configured for the Citrix Machine Creation Service service.
+       at System.Management.Automation.MshCommandRuntime.ThrowTerminatingError(ErrorRecord errorRecord)
+    
