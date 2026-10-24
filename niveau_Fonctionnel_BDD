@@ -1,0 +1,7 @@
+SELECT
+    name,
+    compatibility_level,
+    state_desc,
+    is_read_only
+FROM sys.databases
+WHERE name = 'Site_A_Site';
